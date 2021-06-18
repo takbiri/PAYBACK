@@ -8,6 +8,7 @@ target 'PAYBACK' do
 pod 'Alamofire'
 pod 'SVProgressHUD'
 pod 'SDWebImage'
+pod 'RealmSwift'
 
   # Pods for PAYBACK
 

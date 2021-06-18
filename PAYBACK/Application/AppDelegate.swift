@@ -9,13 +9,13 @@ import UIKit
 import CoreData
 import SVProgressHUD
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        print("home is \(NSHomeDirectory())")
         SVProgressHUD.setDefaultMaskType(.clear)
         
         return true

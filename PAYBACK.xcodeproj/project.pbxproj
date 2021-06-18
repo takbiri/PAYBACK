@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A6AFA6B267CDAB30004A1F0 /* PAYBACK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AFA69267CDAB30004A1F0 /* PAYBACK.xcdatamodeld */; };
+		0A6AFA6D267CDB250004A1F0 /* CDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AFA6C267CDB250004A1F0 /* CDModel.swift */; };
 		0AA2E901267B4113002B362E /* TileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2E900267B4113002B362E /* TileDetailViewController.swift */; };
 		0AA2E903267B4122002B362E /* TileDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2E902267B4122002B362E /* TileDetailViewModel.swift */; };
 		0AA2E906267B6FAF002B362E /* ThumbnailImageForVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2E905267B6FAF002B362E /* ThumbnailImageForVideo.swift */; };
 		0AC1E070267A047400C3C485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1E06F267A047400C3C485 /* AppDelegate.swift */; };
 		0AC1E077267A047400C3C485 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC1E075267A047400C3C485 /* Main.storyboard */; };
-		0AC1E07A267A047400C3C485 /* PAYBACK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1E078267A047400C3C485 /* PAYBACK.xcdatamodeld */; };
 		0AC1E07C267A047600C3C485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC1E07B267A047600C3C485 /* Assets.xcassets */; };
 		0AC1E07F267A047600C3C485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC1E07D267A047600C3C485 /* LaunchScreen.storyboard */; };
 		0AC1E08A267A047600C3C485 /* PAYBACKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1E089267A047600C3C485 /* PAYBACKTests.swift */; };
@@ -46,13 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A6AFA6A267CDAB30004A1F0 /* PAYBACK.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PAYBACK.xcdatamodel; sourceTree = "<group>"; };
+		0A6AFA6C267CDB250004A1F0 /* CDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDModel.swift; sourceTree = "<group>"; };
 		0AA2E900267B4113002B362E /* TileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileDetailViewController.swift; sourceTree = "<group>"; };
 		0AA2E902267B4122002B362E /* TileDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileDetailViewModel.swift; sourceTree = "<group>"; };
 		0AA2E905267B6FAF002B362E /* ThumbnailImageForVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageForVideo.swift; sourceTree = "<group>"; };
 		0AC1E06C267A047400C3C485 /* PAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC1E06F267A047400C3C485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AC1E076267A047400C3C485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0AC1E079267A047400C3C485 /* PAYBACK.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PAYBACK.xcdatamodel; sourceTree = "<group>"; };
 		0AC1E07B267A047600C3C485 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AC1E07E267A047600C3C485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AC1E080267A047600C3C485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		0ABB591D267CC833004AB3B7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0A6AFA6C267CDB250004A1F0 /* CDModel.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		0AC1E063267A047400C3C485 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,7 @@
 		0AC1E0A5267A054200C3C485 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0ABB591D267CC833004AB3B7 /* CoreData */,
 				0AC1E0AB267A0CEB00C3C485 /* Tile.swift */,
 			);
 			path = Model;
@@ -221,7 +232,7 @@
 				0AC1E07B267A047600C3C485 /* Assets.xcassets */,
 				0AC1E07D267A047600C3C485 /* LaunchScreen.storyboard */,
 				0AC1E080267A047600C3C485 /* Info.plist */,
-				0AC1E078267A047400C3C485 /* PAYBACK.xcdatamodeld */,
+				0A6AFA69267CDAB30004A1F0 /* PAYBACK.xcdatamodeld */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -492,11 +503,12 @@
 				0AC1E0B2267A558600C3C485 /* TilesTableViewCell.swift in Sources */,
 				0AC1E0AC267A0CEB00C3C485 /* Tile.swift in Sources */,
 				0AA2E903267B4122002B362E /* TileDetailViewModel.swift in Sources */,
+				0A6AFA6D267CDB250004A1F0 /* CDModel.swift in Sources */,
 				0AC1E0AA267A0CDE00C3C485 /* TilesViewController.swift in Sources */,
 				0AC1E0AE267A0CF300C3C485 /* TilesViewModel.swift in Sources */,
 				0AA2E906267B6FAF002B362E /* ThumbnailImageForVideo.swift in Sources */,
-				0AC1E07A267A047400C3C485 /* PAYBACK.xcdatamodeld in Sources */,
 				0AA2E901267B4113002B362E /* TileDetailViewController.swift in Sources */,
+				0A6AFA6B267CDAB30004A1F0 /* PAYBACK.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,12 +851,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0AC1E078267A047400C3C485 /* PAYBACK.xcdatamodeld */ = {
+		0A6AFA69267CDAB30004A1F0 /* PAYBACK.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0AC1E079267A047400C3C485 /* PAYBACK.xcdatamodel */,
+				0A6AFA6A267CDAB30004A1F0 /* PAYBACK.xcdatamodel */,
 			);
-			currentVersion = 0AC1E079267A047400C3C485 /* PAYBACK.xcdatamodel */;
+			currentVersion = 0A6AFA6A267CDAB30004A1F0 /* PAYBACK.xcdatamodel */;
 			path = PAYBACK.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

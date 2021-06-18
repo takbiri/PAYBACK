@@ -16,10 +16,12 @@ protocol TilesViewModelDelegate {
 class TilesViewModel {
     
     var delegate: TilesViewModelDelegate?
-    
+    var cdModel = CDModel()
+
     func fetchFeeds(){
         
         SVProgressHUD.show()
+        cdModel.delegate = self
         
         guard let url = URL(string:"https://firebasestorage.googleapis.com/v0/b/payback-test.appspot.com/o/feed.json?alt=media&token=0f3f9a33-39df-4ad2-b9df-add07796a0fa") else {return}
         
@@ -36,14 +38,18 @@ class TilesViewModel {
                         let result = try JSONDecoder().decode(Tiles.self, from: response.data!)
                         let tiles = self.defineDataType(result)
                         self.delegate?.didFinishFetchFeeds(tiles)
+                        self.cdModel.resetData()
+                        self.cdModel.saveData(tiles)
                         
                     }catch let error {
                         print("can't decode the data: \(error.localizedDescription)")
+                        self.cdModel.readData()
                     }
                     break
                     
                 case .failure(let error):
                     print("error for service is \(error.localizedDescription)")
+                    self.cdModel.readData()
                     break
                 }
                 
@@ -73,4 +79,13 @@ class TilesViewModel {
         
     }
     
+}
+
+extension TilesViewModel: CDModelDelegate {
+    func offlineData(_ feeds: [Tile]) {
+        print("offline count is: \(feeds.count)")
+        if feeds.count != 0 {
+            self.delegate?.didFinishFetchFeeds(feeds)
+        }
+    }
 }
