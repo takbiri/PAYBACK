@@ -7,7 +7,11 @@
         <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="subline" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Shopping_List" representedClassName="Shopping_List" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Feed" positionX="-54" positionY="-9" width="128" height="104"/>
+        <element name="Shopping_List" positionX="-54" positionY="27" width="128" height="44"/>
     </elements>
 </model>

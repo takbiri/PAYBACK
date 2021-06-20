@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol CDModelDelegate {
-    func offlineData(_ feeds: [Tile])
+protocol TilesCDModelDelegate {
+    func tilesOfflineData(_ feeds: [Tile])
 }
-class CDModel {
+class TilesCDModel {
     
-    var delegate: CDModelDelegate?
+    var delegate: TilesCDModelDelegate?
     var managedObjectContext: NSManagedObjectContext!
     var entity: NSManagedObject!
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -40,7 +40,7 @@ class CDModel {
                                 dataType: nil)
                 feeds.append(tile)
             }
-            self.delegate?.offlineData(feeds)
+            self.delegate?.tilesOfflineData(feeds)
             
         }catch let error {
             print("error for fetching from CoreData: \(error.localizedDescription)")

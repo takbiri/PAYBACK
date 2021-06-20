@@ -16,7 +16,7 @@ protocol TilesViewModelDelegate {
 class TilesViewModel {
     
     var delegate: TilesViewModelDelegate?
-    var cdModel = CDModel()
+    var cdModel = TilesCDModel()
 
     func fetchFeeds(){
         
@@ -36,7 +36,9 @@ class TilesViewModel {
                     do {
                         
                         let result = try JSONDecoder().decode(Tiles.self, from: response.data!)
-                        let tiles = self.defineDataType(result)
+                        var tiles = self.defineDataType(result)
+                        tiles = self.sort(tiles)
+                        
                         self.delegate?.didFinishFetchFeeds(tiles)
                         self.cdModel.resetData()
                         self.cdModel.saveData(tiles)
@@ -71,7 +73,7 @@ class TilesViewModel {
             }else if tile.name == "website"{
                 tile.dataType = .website
             }else {
-                tile.dataType = .shoppingList
+                tile.dataType = .shopping_List
             }
             tiles.append(tile)
         }
@@ -81,11 +83,16 @@ class TilesViewModel {
     
 }
 
-extension TilesViewModel: CDModelDelegate {
-    func offlineData(_ feeds: [Tile]) {
-        print("offline count is: \(feeds.count)")
+extension TilesViewModel: TilesCDModelDelegate {
+    func tilesOfflineData(_ feeds: [Tile]) {
         if feeds.count != 0 {
             self.delegate?.didFinishFetchFeeds(feeds)
+        }
+    }
+    
+    func sort(_ tiles: [Tile]) -> [Tile]{
+        return tiles.sorted { (tile1,tile2) -> Bool in
+            tile1.score > tile2.score
         }
     }
 }

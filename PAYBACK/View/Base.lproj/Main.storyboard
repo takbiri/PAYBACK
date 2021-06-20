@@ -39,11 +39,48 @@
                     <connections>
                         <outlet property="tableView" destination="wJH-ED-QEs" id="Mhr-uV-Oqw"/>
                         <segue destination="3Cc-ux-qE6" kind="show" identifier="showDetail" id="Xs5-Dw-fcV"/>
+                        <segue destination="XKg-cd-f8L" kind="show" identifier="shoppingList" id="pAt-Cr-ESL"/>
+                        <segue destination="ys5-82-Svf" kind="show" identifier="website" id="Fsq-TD-Y4h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1008.6956521739131" y="103.79464285714285"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="pXW-Ge-hg5">
+            <objects>
+                <viewController id="ys5-82-Svf" customClass="WebViewController" customModule="PAYBACK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aWC-Yp-TWK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQk-ZL-EbN">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tnj-d1-iBJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tnj-d1-iBJ" firstAttribute="trailing" secondItem="yQk-ZL-EbN" secondAttribute="trailing" id="Axa-Kq-o8G"/>
+                            <constraint firstItem="tnj-d1-iBJ" firstAttribute="bottom" secondItem="yQk-ZL-EbN" secondAttribute="bottom" id="lgf-1q-VPo"/>
+                            <constraint firstItem="yQk-ZL-EbN" firstAttribute="leading" secondItem="tnj-d1-iBJ" secondAttribute="leading" id="nXk-yF-84d"/>
+                            <constraint firstItem="yQk-ZL-EbN" firstAttribute="top" secondItem="tnj-d1-iBJ" secondAttribute="top" id="t3x-Ah-cFg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3hg-la-SJl"/>
+                    <connections>
+                        <outlet property="webView" destination="yQk-ZL-EbN" id="k3p-0f-Eut"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emt-v9-Wyy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="-578"/>
         </scene>
         <!--Tile Detail View Controller-->
         <scene sceneID="rYc-Zk-qMD">
@@ -82,6 +119,25 @@
                                     <constraint firstAttribute="width" constant="40" id="zX6-gf-48h"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyN-Sl-dLK">
+                                <rect key="frame" x="30" y="816" width="354" height="46"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KyN-Sl-dLK" secondAttribute="height" multiplier="177:23" id="Mev-Rv-YCh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="18"/>
+                                <state key="normal" title="Website">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="websiteButtonDidTouch:" destination="3Cc-ux-qE6" eventType="touchUpInside" id="iMz-OQ-ke4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kSN-hE-1ve"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -92,9 +148,12 @@
                             <constraint firstItem="oKz-wN-w2y" firstAttribute="centerX" secondItem="y3D-wa-mcr" secondAttribute="centerX" id="AIz-yo-xWV"/>
                             <constraint firstItem="wWa-QR-GsN" firstAttribute="leading" secondItem="kSN-hE-1ve" secondAttribute="leading" constant="20" id="AQ8-e3-1eF"/>
                             <constraint firstItem="pmn-Ws-RUk" firstAttribute="top" secondItem="y3D-wa-mcr" secondAttribute="bottom" constant="45" id="Jcf-j4-16x"/>
+                            <constraint firstItem="KyN-Sl-dLK" firstAttribute="leading" secondItem="kSN-hE-1ve" secondAttribute="leading" constant="30" id="Lhc-7A-Nz6"/>
                             <constraint firstItem="oKz-wN-w2y" firstAttribute="centerY" secondItem="y3D-wa-mcr" secondAttribute="centerY" id="Pge-T5-FVC"/>
+                            <constraint firstItem="kSN-hE-1ve" firstAttribute="trailing" secondItem="KyN-Sl-dLK" secondAttribute="trailing" constant="30" id="RIY-7H-ljA"/>
                             <constraint firstItem="y3D-wa-mcr" firstAttribute="top" secondItem="kSN-hE-1ve" secondAttribute="top" constant="15" id="cE6-0f-Gyh"/>
                             <constraint firstItem="wWa-QR-GsN" firstAttribute="top" secondItem="pmn-Ws-RUk" secondAttribute="bottom" constant="28" id="ciX-TH-mnT"/>
+                            <constraint firstItem="KyN-Sl-dLK" firstAttribute="bottom" secondItem="kSN-hE-1ve" secondAttribute="bottom" id="dhs-rP-wNL"/>
                             <constraint firstItem="kSN-hE-1ve" firstAttribute="trailing" secondItem="wWa-QR-GsN" secondAttribute="trailing" constant="20" id="eUR-Mb-oef"/>
                             <constraint firstItem="kSN-hE-1ve" firstAttribute="trailing" secondItem="y3D-wa-mcr" secondAttribute="trailing" id="iFZ-GD-pUE"/>
                         </constraints>
@@ -105,6 +164,7 @@
                         <outlet property="headlineLabel" destination="pmn-Ws-RUk" id="yd7-5X-pxb"/>
                         <outlet property="playImageView" destination="oKz-wN-w2y" id="beB-PF-x7N"/>
                         <outlet property="sublineLabel" destination="wWa-QR-GsN" id="hg6-Gx-KWC"/>
+                        <outlet property="webisteButton" destination="KyN-Sl-dLK" id="Lpw-sP-uWn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vy0-vQ-eIf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -114,7 +174,67 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1824.6376811594205" y="103.79464285714285"/>
+            <point key="canvasLocation" x="1841" y="89"/>
+        </scene>
+        <!--Shopping List-->
+        <scene sceneID="cgJ-Xn-L3h">
+            <objects>
+                <viewController id="XKg-cd-f8L" customClass="ShoppingListViewController" customModule="PAYBACK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aRh-ou-Wvm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Uae-n6-BG0">
+                                <rect key="frame" x="30" y="128" width="354" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What I need to buy?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fcm-aP-bCo">
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="XKg-cd-f8L" id="Ncw-qn-0q7"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM8-dQ-hAM">
+                                        <rect key="frame" x="320" y="0.0" width="34" height="34"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButtonDidTouch:" destination="XKg-cd-f8L" eventType="touchUpInside" id="J9g-Q0-uk1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WPF-SH-1mJ">
+                                <rect key="frame" x="30" y="170" width="354" height="692"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XKg-cd-f8L" id="9FG-xF-iL4"/>
+                                    <outlet property="delegate" destination="XKg-cd-f8L" id="gEO-H3-YKf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sQY-HJ-o8F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WPF-SH-1mJ" firstAttribute="leading" secondItem="sQY-HJ-o8F" secondAttribute="leading" constant="30" id="Drk-V8-eJ6"/>
+                            <constraint firstItem="WPF-SH-1mJ" firstAttribute="bottom" secondItem="sQY-HJ-o8F" secondAttribute="bottom" id="G6u-yA-b0Y"/>
+                            <constraint firstItem="Uae-n6-BG0" firstAttribute="top" secondItem="sQY-HJ-o8F" secondAttribute="top" constant="40" id="JgN-ex-d8o"/>
+                            <constraint firstItem="sQY-HJ-o8F" firstAttribute="trailing" secondItem="WPF-SH-1mJ" secondAttribute="trailing" constant="30" id="Yui-du-rPr"/>
+                            <constraint firstItem="WPF-SH-1mJ" firstAttribute="top" secondItem="Uae-n6-BG0" secondAttribute="bottom" constant="8" id="ZeL-EK-yy9"/>
+                            <constraint firstItem="Uae-n6-BG0" firstAttribute="leading" secondItem="sQY-HJ-o8F" secondAttribute="leading" constant="30" id="haC-Kk-Rzi"/>
+                            <constraint firstItem="sQY-HJ-o8F" firstAttribute="trailing" secondItem="Uae-n6-BG0" secondAttribute="trailing" constant="30" id="ii8-Zo-Nfu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Shopping List" id="rn2-Dc-vFr"/>
+                    <connections>
+                        <outlet property="saveButton" destination="jM8-dQ-hAM" id="xCb-4h-IM3"/>
+                        <outlet property="tableView" destination="WPF-SH-1mJ" id="D66-Ec-Rgw"/>
+                        <outlet property="textField" destination="Fcm-aP-bCo" id="k2a-gj-ley"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bfx-Kz-2S0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="770"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iyW-kQ-BXU">

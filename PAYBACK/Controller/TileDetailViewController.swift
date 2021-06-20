@@ -19,6 +19,7 @@ class TileDetailViewController: UIViewController {
             }
         }
     }
+    @IBOutlet weak var webisteButton: UIButton!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var sublineLabel: UILabel!
@@ -49,6 +50,7 @@ class TileDetailViewController: UIViewController {
             break
             
         case .website:
+            self.webisteButton.alpha = 1.0
             break
             
         default:
@@ -76,5 +78,8 @@ class TileDetailViewController: UIViewController {
     
     @IBAction func playVideoTapGesture(_ sender: Any) {
         playVideo(url: url)
+    }
+    @IBAction func websiteButtonDidTouch(_ sender: Any) {
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

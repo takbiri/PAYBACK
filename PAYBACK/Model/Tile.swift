@@ -26,5 +26,5 @@ enum DataType: String, Codable{
     case image
     case video
     case website
-    case shoppingList
+    case shopping_List
 }

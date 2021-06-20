@@ -9,6 +9,7 @@ pod 'Alamofire'
 pod 'SVProgressHUD'
 pod 'SDWebImage'
 pod 'RealmSwift'
+pod 'IQKeyboardManager' 
 
   # Pods for PAYBACK
 

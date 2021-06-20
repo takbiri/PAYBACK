@@ -52,11 +52,20 @@ extension TilesViewController: TilesViewModelDelegate, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let feed = self.tiles[indexPath.row]
-        self.performSegue(withIdentifier: "showDetail", sender: feed)
+        if feed.dataType == .shopping_List {
+            self.performSegue(withIdentifier: "shoppingList", sender: feed)
+        }else if feed.dataType == .website {
+            self.performSegue(withIdentifier: "website", sender: feed)
+        }else {
+            self.performSegue(withIdentifier: "showDetail", sender: feed)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let vc = segue.destination as! TileDetailViewController
+            vc.tileDetail = sender as? Tile
+        }else if segue.identifier == "website" {
+            let vc = segue.destination as! WebViewController
             vc.tileDetail = sender as? Tile
         }
     }
