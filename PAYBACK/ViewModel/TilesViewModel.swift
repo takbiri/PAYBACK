@@ -17,7 +17,7 @@ class TilesViewModel {
     
     var delegate: TilesViewModelDelegate?
     var cdModel = TilesCDModel()
-
+    
     func fetchFeeds(){
         
         SVProgressHUD.show()

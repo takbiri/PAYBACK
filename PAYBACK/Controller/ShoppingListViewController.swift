@@ -10,7 +10,7 @@ import UIKit
 class ShoppingListViewController: UIViewController {
 
     var shoppingListViewModel = ShoppingListViewModel()
-    var shoppingList:[ShoppingList] = []
+    var shoppingList:[ShoppingItem] = []
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -28,7 +28,7 @@ class ShoppingListViewController: UIViewController {
     }
     
     @IBAction func saveButtonDidTouch(_ sender: Any) {
-        let item = ShoppingList(title: textField.text!)
+        let item = ShoppingItem(title: textField.text!)
         shoppingListViewModel.saveItem(item: item)
         self.textField.text = ""
         self.textField.resignFirstResponder()
@@ -37,7 +37,7 @@ class ShoppingListViewController: UIViewController {
 }
 
 extension ShoppingListViewController: ShoppingListViewModelDelegate,UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-    func didFinishFetchShoppingList(_ list: [ShoppingList]) {
+    func didFinishFetchShoppingList(_ list: [ShoppingItem]) {
         self.shoppingList = list
         self.tableView.reloadData()
     }

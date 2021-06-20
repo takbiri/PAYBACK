@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 protocol ShoppingListCDModelDelegate {
-    func shoppingListData(_ list: [ShoppingList])
+    func shoppingListData(_ list: [ShoppingItem])
 }
 class ShoppingListCDModel {
     
@@ -29,10 +29,10 @@ class ShoppingListCDModel {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Shopping_List")
         do {
             let results = try managedObjectContext.fetch(request)
-            var list: [ShoppingList] = []
+            var list: [ShoppingItem] = []
 
             for result in results as! [NSManagedObject] {
-                let shoppingItem = ShoppingList(title: "\(result.value(forKey: "title") ?? "")")
+                let shoppingItem = ShoppingItem(title: "\(result.value(forKey: "title") ?? "")")
                 list.append(shoppingItem)
             }
             self.delegate?.shoppingListData(list)
@@ -43,7 +43,7 @@ class ShoppingListCDModel {
         
     }
     
-    func saveData(_ item: ShoppingList) -> Bool{
+    func saveData(_ item: ShoppingItem) -> Bool{
         
         entity = NSEntityDescription.insertNewObject(forEntityName: "Shopping_List", into: managedObjectContext)
         entity.setValue(item.title, forKey: "title")
@@ -56,7 +56,7 @@ class ShoppingListCDModel {
         }
     }
     
-    func deleteItem(_ item: ShoppingList){
+    func deleteItem(_ item: ShoppingItem){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Shopping_List")
         request.predicate = NSPredicate(format: "title = %@", item.title)
         do {
@@ -69,19 +69,6 @@ class ShoppingListCDModel {
             
         }catch let error {
             print("error for fetching from CoreData: \(error.localizedDescription)")
-        }
-    }
-    
-    func resetData() -> Bool{
-        do {
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Shopping_List")
-            let request: NSBatchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-            try managedObjectContext.execute(request)
-            try managedObjectContext.save()
-            return true
-        } catch let error {
-            print("error for reset core data: \(error.localizedDescription)")
-            return false
         }
     }
 }

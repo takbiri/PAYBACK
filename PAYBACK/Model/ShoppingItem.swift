@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct ShoppingList {
+struct ShoppingItem {
     let title: String
 }

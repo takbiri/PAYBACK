@@ -9,7 +9,7 @@ import Foundation
 
 
 protocol ShoppingListViewModelDelegate {
-    func didFinishFetchShoppingList(_ list: [ShoppingList])
+    func didFinishFetchShoppingList(_ list: [ShoppingItem])
 }
 
 class ShoppingListViewModel {
@@ -21,26 +21,20 @@ class ShoppingListViewModel {
         shoppingListCDModel.readData()
     }
     
-    func saveItem(item: ShoppingList){
+    func saveItem(item: ShoppingItem){
         if shoppingListCDModel.saveData(item){
             fetchList()
         }
         
     }
     
-    func deleteItem(item: ShoppingList){
+    func deleteItem(item: ShoppingItem){
         shoppingListCDModel.deleteItem(item)
-    }
-    
-    func resetCoreData(){
-        if shoppingListCDModel.resetData(){
-            fetchList()
-        }
     }
 }
 
 extension ShoppingListViewModel: ShoppingListCDModelDelegate {
-    func shoppingListData(_ list: [ShoppingList]) {
+    func shoppingListData(_ list: [ShoppingItem]) {
         delegate?.didFinishFetchShoppingList(list)
     }
     
