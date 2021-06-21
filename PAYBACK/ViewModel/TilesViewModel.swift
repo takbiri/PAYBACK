@@ -2,7 +2,7 @@
 //  FeedsViewModel.swift
 //  PAYBACK
 //
-//  Created by Mohammad Takbiri on 6/16/21.
+//  Created by Mohammad Takbir on 6/16/21.
 //
 
 import Foundation
@@ -86,7 +86,8 @@ class TilesViewModel {
 extension TilesViewModel: TilesCDModelDelegate {
     func tilesOfflineData(_ feeds: [Tile]) {
         if feeds.count != 0 {
-            self.delegate?.didFinishFetchFeeds(feeds)
+            let tiles = Tiles(tiles: feeds)
+            self.delegate?.didFinishFetchFeeds(self.defineDataType(tiles))
         }
     }
     

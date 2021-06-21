@@ -2,7 +2,7 @@
 //  ThumbnailImageForVideo.swift
 //  PAYBACK
 //
-//  Created by Mohammad Takbiri on 6/17/21.
+//  Created by Mohammad Takbir on 6/17/21.
 //
 
 import Foundation

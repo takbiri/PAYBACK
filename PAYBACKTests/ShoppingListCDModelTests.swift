@@ -2,7 +2,7 @@
 //  ShoppingListViewModelTests.swift
 //  PAYBACKTests
 //
-//  Created by Mohammad Takbiri on 6/20/21.
+//  Created by Mohammad Takbir on 6/20/21.
 //
 
 import XCTest

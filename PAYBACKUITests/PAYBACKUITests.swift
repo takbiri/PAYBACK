@@ -2,7 +2,7 @@
 //  PAYBACKUITests.swift
 //  PAYBACKUITests
 //
-//  Created by Mohammad Takbiri on 6/16/21.
+//  Created by Mohammad Takbir on 6/16/21.
 //
 
 import XCTest
