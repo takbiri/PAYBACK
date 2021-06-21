@@ -119,25 +119,6 @@
                                     <constraint firstAttribute="width" constant="40" id="zX6-gf-48h"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyN-Sl-dLK">
-                                <rect key="frame" x="30" y="816" width="354" height="46"/>
-                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="KyN-Sl-dLK" secondAttribute="height" multiplier="177:23" id="Mev-Rv-YCh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="18"/>
-                                <state key="normal" title="Website">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="websiteButtonDidTouch:" destination="3Cc-ux-qE6" eventType="touchUpInside" id="iMz-OQ-ke4"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kSN-hE-1ve"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -148,12 +129,9 @@
                             <constraint firstItem="oKz-wN-w2y" firstAttribute="centerX" secondItem="y3D-wa-mcr" secondAttribute="centerX" id="AIz-yo-xWV"/>
                             <constraint firstItem="wWa-QR-GsN" firstAttribute="leading" secondItem="kSN-hE-1ve" secondAttribute="leading" constant="20" id="AQ8-e3-1eF"/>
                             <constraint firstItem="pmn-Ws-RUk" firstAttribute="top" secondItem="y3D-wa-mcr" secondAttribute="bottom" constant="45" id="Jcf-j4-16x"/>
-                            <constraint firstItem="KyN-Sl-dLK" firstAttribute="leading" secondItem="kSN-hE-1ve" secondAttribute="leading" constant="30" id="Lhc-7A-Nz6"/>
                             <constraint firstItem="oKz-wN-w2y" firstAttribute="centerY" secondItem="y3D-wa-mcr" secondAttribute="centerY" id="Pge-T5-FVC"/>
-                            <constraint firstItem="kSN-hE-1ve" firstAttribute="trailing" secondItem="KyN-Sl-dLK" secondAttribute="trailing" constant="30" id="RIY-7H-ljA"/>
                             <constraint firstItem="y3D-wa-mcr" firstAttribute="top" secondItem="kSN-hE-1ve" secondAttribute="top" constant="15" id="cE6-0f-Gyh"/>
                             <constraint firstItem="wWa-QR-GsN" firstAttribute="top" secondItem="pmn-Ws-RUk" secondAttribute="bottom" constant="28" id="ciX-TH-mnT"/>
-                            <constraint firstItem="KyN-Sl-dLK" firstAttribute="bottom" secondItem="kSN-hE-1ve" secondAttribute="bottom" id="dhs-rP-wNL"/>
                             <constraint firstItem="kSN-hE-1ve" firstAttribute="trailing" secondItem="wWa-QR-GsN" secondAttribute="trailing" constant="20" id="eUR-Mb-oef"/>
                             <constraint firstItem="kSN-hE-1ve" firstAttribute="trailing" secondItem="y3D-wa-mcr" secondAttribute="trailing" id="iFZ-GD-pUE"/>
                         </constraints>
@@ -164,7 +142,6 @@
                         <outlet property="headlineLabel" destination="pmn-Ws-RUk" id="yd7-5X-pxb"/>
                         <outlet property="playImageView" destination="oKz-wN-w2y" id="beB-PF-x7N"/>
                         <outlet property="sublineLabel" destination="wWa-QR-GsN" id="hg6-Gx-KWC"/>
-                        <outlet property="webisteButton" destination="KyN-Sl-dLK" id="Lpw-sP-uWn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vy0-vQ-eIf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

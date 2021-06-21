@@ -19,7 +19,6 @@ class TileDetailViewController: UIViewController {
             }
         }
     }
-    @IBOutlet weak var webisteButton: UIButton!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var sublineLabel: UILabel!
@@ -39,7 +38,7 @@ class TileDetailViewController: UIViewController {
         
         switch tileDetail.dataType {
         case .image:
-            self.contentImageView.sd_setImage(with: url, completed: nil)
+            self.contentImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "notFound"))
             break
             
         case .video:
@@ -47,10 +46,6 @@ class TileDetailViewController: UIViewController {
             self.playImageView.alpha = 1.0
             self.contentImageView.image = UIImage(named: "notFound")
             self.showAlert()
-            break
-            
-        case .website:
-            self.webisteButton.alpha = 1.0
             break
             
         default:

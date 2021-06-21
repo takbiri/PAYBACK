@@ -37,16 +37,20 @@ class TilesTableViewCell: UITableViewCell {
         switch tile.dataType {
         case .image:
             guard let url = URL(string: tile.data!) else {break}
-            self.contentImageView.sd_setImage(with: url, completed: nil)
+            self.contentImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "notFound"))
             break
             
         case .video:
             self.playImageView.alpha = 1.0
             self.contentImageView.image = UIImage(named: "notFound")
-            
             break
             
         case .website:
+            self.contentImageView.image = UIImage(named: "safari")
+            break
+            
+        case .shopping_List:
+            self.contentImageView.image = UIImage(named: "bag")
             break
             
         default:
