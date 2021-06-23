@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol TilesCDModelDelegate {
+protocol TilesCDModelDelegate:AnyObject {
     func tilesOfflineData(_ feeds: [Tile])
 }
 class TilesCDModel {
     
-    var delegate: TilesCDModelDelegate?
+    weak var delegate: TilesCDModelDelegate?
     var managedObjectContext: NSManagedObjectContext!
     var entity: NSManagedObject!
     var appDelegate = UIApplication.shared.delegate as? AppDelegate

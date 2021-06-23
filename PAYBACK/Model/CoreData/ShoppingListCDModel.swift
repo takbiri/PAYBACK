@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol ShoppingListCDModelDelegate {
+protocol ShoppingListCDModelDelegate:AnyObject {
     func shoppingListData(_ list: [ShoppingItem])
 }
 class ShoppingListCDModel {
     
-    var delegate: ShoppingListCDModelDelegate?
+    weak var delegate: ShoppingListCDModelDelegate?
     var managedObjectContext: NSManagedObjectContext!
     var entity: NSManagedObject!
     var appDelegate = UIApplication.shared.delegate as? AppDelegate

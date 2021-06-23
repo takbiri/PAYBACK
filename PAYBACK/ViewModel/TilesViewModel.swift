@@ -7,20 +7,18 @@
 
 import Foundation
 import Alamofire
-import SVProgressHUD
 
-protocol TilesViewModelDelegate {
+protocol TilesViewModelDelegate:AnyObject {
     func didFinishFetchFeeds(_ feeds: [Tile])
 }
 
 class TilesViewModel {
     
-    var delegate: TilesViewModelDelegate?
+    weak var delegate: TilesViewModelDelegate?
     var cdModel = TilesCDModel()
     
     func fetchFeeds(){
         
-        SVProgressHUD.show()
         cdModel.delegate = self
         
         guard let url = URL(string:"https://firebasestorage.googleapis.com/v0/b/payback-test.appspot.com/o/feed.json?alt=media&token=0f3f9a33-39df-4ad2-b9df-add07796a0fa") else {return}
@@ -28,8 +26,7 @@ class TilesViewModel {
         AF.request(url).response { response in
             
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
-                
+                    
                 switch response.result {
                 
                 case .success:

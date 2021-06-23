@@ -33,7 +33,6 @@ class WebViewController: UIViewController {
         guard let url = URL(string: tileDetail.data ?? "") else {return}
         let urlRequest = URLRequest(url: url)
         webView.load(urlRequest)
-//        webView.uiDelegate = self
         webView.navigationDelegate = self
         
     }

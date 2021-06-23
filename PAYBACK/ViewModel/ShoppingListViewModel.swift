@@ -8,12 +8,12 @@
 import Foundation
 
 
-protocol ShoppingListViewModelDelegate {
+protocol ShoppingListViewModelDelegate:AnyObject {
     func didFinishFetchShoppingList(_ list: [ShoppingItem])
 }
 
 class ShoppingListViewModel {
-    var delegate: ShoppingListViewModelDelegate?
+    weak var delegate: ShoppingListViewModelDelegate?
     var shoppingListCDModel = ShoppingListCDModel()
     
     func fetchList(){

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class TilesViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class TilesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SVProgressHUD.show()
         tilesViewModel.delegate = self
         tilesViewModel.fetchFeeds()
         updateUI()
@@ -34,6 +36,7 @@ extension TilesViewController: TilesViewModelDelegate, UITableViewDelegate, UITa
     func didFinishFetchFeeds(_ feeds: [Tile]) {
         self.tiles = feeds
         self.tableView.reloadData()
+        SVProgressHUD.dismiss()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
